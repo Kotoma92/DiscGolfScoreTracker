@@ -1,0 +1,9 @@
+html {
+	max-width: 100ch;
+	padding: 2ch;
+	margin: auto;
+	font-size: 1.2em;
+	font-family: sans-serif;
+	color: aliceblue;
+	background-color: #121212;
+}
