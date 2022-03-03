@@ -1,21 +1,12 @@
-var app = document.getElementById('app');
-
-const model = {
+export const Model = {
     mainTitle: 'Disc Golf Score Tracker',
+    
+    player: [],
+    playerList: "",
 
-    player: [
-        {
-            name: '',
-        },
-    ],
-
-    score: [
-
-    ],
-
-    course: [
-
-    ],
-
-
+    courseTitle: "Course Name Here",
+    holes: [],
+    holePar: [],
+    activeHole: 0,
+    
 }
