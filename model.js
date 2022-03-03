@@ -4,9 +4,7 @@ export const Model = {
     player: [],
     playerList: "",
 
-    courseTitle: "Course Name Here",
     holes: [],
     holePar: [],
     activeHole: 0,
-    
 }

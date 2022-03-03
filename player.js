@@ -1,3 +1,4 @@
+// NewPlayer deklarasjon blir private, men playerobjektet ertilgjengelig via player.GetValues
 const NewPlayer = (name) => {
     return {
         name,
@@ -10,25 +11,12 @@ const NewPlayer = (name) => {
 export const CreatePlayer = (name) => { 
     const player = NewPlayer(name);
     return  { 
-
-        GetName(){
-            return player.name;
-        },
-
         GetValues () {
             return player;
         },
 
-        Serialize(){
-            return JSON.stringify(player);
-        },
-        
-        Deserialize (values) {
-            player = JSON.parse(values);
-        },
-
-        AddScore(score){
-            player.holeScore.push(score)
+        GetName(){
+            return player.name;
         },
 
         GetHoleScore(hole){
@@ -37,27 +25,47 @@ export const CreatePlayer = (name) => {
                 return 0
             return score;
         },
-
-        ChangeScore(holeNr, newscore){
-            player.holeScore[holeNr] = newscore
+       
+        //Ikke i bruk enda
+        GetOutOfBounds(){
+            return player.outOfBounds;
         },
 
-        AddOutOfBounds(score){
-            player.outOfBounds.push(score)  
-        },
-        
-        ChangeOutOfBounds(holeNr, outOfBounds){
-            player.outOfBounds[holeNr] = outOfBounds
-        },
-
-        TotalScore(){
+        GetTotalScore(){
             let result = 0;
             player.holeScore.forEach(element => {
                 result = result + element;
             });
             player.totalScore = result;
             return player.totalScore;
-        }
+        },
+
+        AddScore(value){
+            player.holeScore.push(value);
+        },
+
+        //Ikke i bruk enda
+        AddOutOfBounds(value){
+            player.outOfBounds.push(value);
+        },
+
+        ChangeScore(holeNr, newscore){
+            player.holeScore[holeNr] = newscore;
+        },
+        
+        //Ikke i bruk enda
+        ChangeOutOfBounds(holeNr, outOfBounds){
+            player.outOfBounds[holeNr] = outOfBounds;
+        },
+        
+        //Disse to skal brukes for lokal storage etterhvert
+        Serialize(){
+            return JSON.stringify(player);
+        },
+        
+        Deserialize (values) {
+            player = JSON.parse(values);
+        },
     }
 }
 

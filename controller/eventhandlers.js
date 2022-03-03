@@ -1,13 +1,12 @@
 import { Model } from "../model.js";
 import { Controller as Cont } from "./controller.js";
-import { PlayerController as PCont } from "./playercontroller.js";
 import { showView } from "../view.js";
 
 export const Eventhandlers = {
     OnClickAddPlayer(){
         let input = document.querySelector(".addPlayerInput");
         let button = document.querySelector(".addPlayerButton");
-        button.addEventListener("click", () =>{PCont.CreatePlayer(input.value)});
+        button.addEventListener("click", () =>{Cont.CreatePlayer(input.value)});
      },
 
      OnClickNextHole(){
@@ -30,6 +29,7 @@ export const Eventhandlers = {
           showView()
         });
      },
+
      OnIncrementPlayerScore(){
          let inputs = document.querySelectorAll('[class^="Player"]')
          for (let i = 0; i < inputs.length; i++) {
