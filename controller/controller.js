@@ -24,9 +24,9 @@ export const Controller = {
     Model.playerList = "";
     for (let i = 0; i < Model.player.length; i++) {
       Model.playerList += `
-        <div class="ListedPlayer${i + 1} ${
+        <div class="ListedPlayer${i + 1}" id='${
         Model.activePlayer == i ? "activePlayer" : ""
-      }">
+      }'>
             <div class="PNumName">${i + 1}. ${Model.player[i].GetName()}</div>
             <div class="PScore">
               Hull Score: 
