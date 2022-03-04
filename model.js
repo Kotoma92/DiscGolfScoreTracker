@@ -1,15 +1,13 @@
 export const Model = {
-    mainTitle: 'Disc Golf Score Tracker',
-    
-    player: [],
-    playerList: '',
+  mainTitle: "Disc Golf Score Tracker",
 
-    holes: [],
-    holePar: [],
-    activeHole: 0,
+  player: [],
+  playerList: "",
 
-    keyboard:{
-        buttons:'',
-        layout:[7,8,9,4,5,6,1,2,3],
-    },
-}
+  holes: [],
+  holePar: [],
+  activeHole: 0,
+  activePlayer: 0,
+
+  keyBoard: "",
+};

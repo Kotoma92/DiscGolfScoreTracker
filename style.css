@@ -18,17 +18,6 @@ html {
 	align-items: center;
 }
 
-.players {
-	height:40px;
-	margin:5px;
-	padding:5px;
-	border:1px solid white;
-	clear:left;
-	display:flex;
-	justify-content:space-around;
-	align-items:center;
-}
-
 .input {
 	width:200px;
 	margin-bottom:10px;
@@ -43,10 +32,6 @@ html {
 	justify-content: center;
 }
 
-.players input {
-	width: 20px;
-	height: 15px;
-}
 
 .holes{
 	margin-top:15px;
@@ -60,14 +45,61 @@ html {
 	height: 20px;
 }
 
+div[class^="ListedPlayer"] {
+	height:40px;
+	margin:5px;
+	padding:5px;
+	border:1px solid white;
+	display:flex;
+	flex-flow: row wrap;
+	align-items:center;
+	justify-content:space-around;
+}
+input[class^="PlayerInput"] {
+	width: 20px;
+	height: 15px;
+}
+
+.keyboard-container{
+	margin-top: 15px;
+	display: flex;
+	justify-content:center;
+}
+.keyboard {
+	display: flex;
+	height: 85px;
+	width: 75px;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+#key7, #key8, #key9{
+	order: -1;
+}
+#key4, #key5, #key6 {
+	order: 0;
+}
+
+#key1, #key2, #key3{
+	order:1;
+}
+#key0{
+	order: 2;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+	-moz-appearance: textfield;
+}
+
+.activePlayer{
+	transform: scale(1.1);
+  	border-color: purple;
+	box-shadow: 0 0 10px purple;
 }
