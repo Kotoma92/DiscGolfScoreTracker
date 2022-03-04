@@ -22,7 +22,7 @@ export const CreatePlayer = (name) => {
         GetHoleScore(hole){
             const score = player.holeScore[hole];
             if(typeof score === 'undefined')
-                return null
+                return ''
             return score;
         },
        
