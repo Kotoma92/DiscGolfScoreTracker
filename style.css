@@ -11,25 +11,53 @@ html {
 	border-radius:5%;
 }
 
+.wrap{
+	display:flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+}
+
 .players {
-	height:30px;
+	height:40px;
 	margin:5px;
 	padding:5px;
 	border:1px solid white;
 	clear:left;
+	display:flex;
+	justify-content:space-around;
+	align-items:center;
 }
 
-.left {
-	float:left;
+.input {
+	width:200px;
+	margin-bottom:10px;
 }
 
-.right {
-	float:right;
+.first {
+	clear:left;
+}
+
+.hei{
+	display: flex;
+	justify-content: center;
 }
 
 .players input {
 	width: 20px;
 	height: 15px;
+}
+
+.holes{
+	margin-top:15px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.buttons {
+	margin:3px;
+	width: 100px;
+	height: 20px;
 }
 
 /* Chrome, Safari, Edge, Opera */

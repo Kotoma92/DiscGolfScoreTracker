@@ -18,21 +18,34 @@ export const Controller = {
          Model.player.push(newPlayer(name));
          console.log(Model.player);
          showView();
-      }  
+      }
    },
   
    ListPlayers(){
-      Model.playerList = "";
+      Model.playerList = '';
       for (let i = 0; i < Model.player.length; i++) {
           Model.playerList += `
-              <div class="players">
-                  <div class="left">${i+1}. ${Model.player[i].GetName()}</div>
-                  <div class="right">Hull Score: <input class="Player${i+1}" min="0" type="number" value="${Model.player[i].GetHoleScore(Model.activeHole)}">
-                  Total Score: ${Model.player[i].GetTotalScore()}</div>
-              </div>
-         `;      
+          <div class="players">
+               <div>${i+1}. ${Model.player[i].GetName()}</div>
+               <div>Hull Score: <input class="Player${i+1}" min="0" type="number" value="${Model.player[i].GetHoleScore(Model.activeHole)}">
+               Total Score: ${Model.player[i].GetTotalScore()}</div>
+            </div>
+         `;
       }
       return Model.playerList;
    },
-}
 
+   // Keyboard(){
+   //    Model.keyboard.buttons = '';
+   //    // loop up to X numbers of keys on keyboard
+   //    for (let i = 0; i < 9; i++) {
+   //       let first = i % 3 == 0 ? 'class="first"' : '';
+   //       Model.keyboard.buttons += /*HTML*/`
+   //          <div ${first}>
+   //             <button>${Model.keyboard.layout[i]}</button>
+   //          </div>
+   //       `;
+   //    }
+   //    return Model.keyboard.buttons;
+   // }
+}

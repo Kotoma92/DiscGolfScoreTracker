@@ -10,10 +10,18 @@ showView();
 //View Funksjoner
 export function showView(){
     app.innerHTML = /*HTML*/`
-    <div>${Model.mainTitle}</div><br>
-    <input class='addPlayerInput' value=""></input><button class='addPlayerButton' >Add Player</button>
-    <div>Aktivt Hull: ${Model.activeHole+1}</div>
-    <button class='lastHole'>Forrige Hull</button><button class='nextHole'>Neste Hull</button>
+    <div class="wrap">
+        <div class="center">${Model.mainTitle}</div><br>
+        <input class="input addPlayerInput" value=""></input>
+        <button class="buttons addPlayerButton">Add Player</button>
+    </div>
+
+    <div class="holes">
+        <button class="buttons lastHole">Forrige Hull</button>
+        <div>Aktivt Hull: ${Model.activeHole+1}</div>
+        <button class="buttons nextHole">Neste Hull</button>
+    </div>
+
     ${Cont.ListPlayers()}
     `
     Event.OnClickAddPlayer();
@@ -21,3 +29,6 @@ export function showView(){
     Event.OnClickLastHole();
     Event.OnIncrementPlayerScore()
 }
+
+
+// HUSK Å BYGG FUNKSJONALITET OG VIEW TING FOR "hull Par"
