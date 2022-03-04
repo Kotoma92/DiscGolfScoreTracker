@@ -26,8 +26,6 @@ export function showView() {
     <div class="keyboard-container">
         <div class="keyboard">${Cont.MakeOnScreenKeyboard()}</div>
     </div>
-
-    <div><button class="cLog">Console log</button></div>
     `;
   Event.OnClickAddPlayer();
   Event.OnClickNextHole();
