@@ -9,7 +9,7 @@ export const Controller = {
       Model.holes.push(Model.holes.length);
       Model.player.forEach(player => {
          player.AddOutOfBounds(null);
-         player.AddScore(0);
+         //player.AddScore(0);
       });
    },
 
@@ -27,7 +27,7 @@ export const Controller = {
           Model.playerList += `
           <div class="players">
                <div>${i+1}. ${Model.player[i].GetName()}</div>
-               <div>Hull Score: <input class="Player${i+1}" min="0" type="number" value="${Model.player[i].GetHoleScore(Model.activeHole)}">
+               <div>Hull Score: <input class="Player${i+1}" min="0" type="number" placeholder="0" value="${Model.player[i].GetHoleScore(Model.activeHole)}">
                Total Score: ${Model.player[i].GetTotalScore()}</div>
             </div>
          `;
