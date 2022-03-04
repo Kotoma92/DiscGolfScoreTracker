@@ -1,6 +1,6 @@
 import { Model } from "../model.js";
 import { showView } from "../view.js";
-import { CreatePlayer as newPlayer } from "../player.js";
+import { CreatePlayer as newPlayer } from "./playercontroller.js";
 
 export const Controller = {
     
