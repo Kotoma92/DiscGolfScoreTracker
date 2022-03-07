@@ -87,7 +87,20 @@ export const Eventhandlers = {
         [id^='someId'] will match all ids starting with someId.
         [id$='someId'] will match all ids ending with someId.
         [id*='someId'] will match all ids containing someId.
-     */
+  */
+
+  OnClickHolePar() {
+    let divHolePar = document.querySelector(".holePar");
+    divHolePar.addEventListener("click", () => {
+      divHolePar.innerHTML =
+        "Par: <input type='number' autofocus class='holeParInput'>";
+      let InputHolePar = document.querySelector(".holeParInput");
+      InputHolePar.addEventListener("input", (e) => {
+        Model.holePar[Model.activeHole] = e.target.value;
+        showView();
+      });
+    });
+  },
 
   OnClickConsoleLogButton() {
     let clogButton = document.querySelector(".cLog");

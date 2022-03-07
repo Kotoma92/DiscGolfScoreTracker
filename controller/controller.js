@@ -6,6 +6,7 @@ export const Controller = {
   //General stuff
   NewHole() {
     Model.holes.push(Model.holes.length);
+    Model.holePar.push(0);
     Model.player.forEach((player) => {
       player.AddOutOfBounds(null);
       //player.AddScore(0);
@@ -29,15 +30,25 @@ export const Controller = {
       }'>
             <div class="PNumName">${i + 1}. ${Model.player[i].GetName()}</div>
             <div class="PScore">
-              Hull Score: 
-              <input 
-                class="PlayerInput${i + 1}"
-                min="0"
-                type="number"
-                placeholder="0"
-                value="${Model.player[i].GetHoleScore(Model.activeHole)}"
-              >
-              Total Score: ${Model.player[i].GetTotalScore()}
+              <div>
+                Hull Score: 
+                  <input 
+                  class="PlayerInput${i + 1}"
+                  min="0"
+                  type="number"
+                  placeholder="0"
+                  value="${Model.player[i].GetHoleScore(Model.activeHole)}"
+                  >
+              </div>
+              <div class="holePar">
+                Par: ${Model.player[i].GetParScore(
+                  Model.activeHole,
+                  Model.holePar[Model.activeHole]
+                )}
+              </div>
+              <div>
+                Total Score: ${Model.player[i].GetTotalScore()}
+              </div>
             </div>
         </div>
       `;

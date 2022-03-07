@@ -6,6 +6,7 @@ export const Model = {
 
   holes: [],
   holePar: [],
+
   activeHole: 0,
   activePlayer: 0,
 

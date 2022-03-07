@@ -19,6 +19,11 @@ export function showView() {
     <div class="holes">
         <button class="buttons lastHole">Forrige Hull</button>
         <div>Aktivt Hull: ${Model.activeHole + 1}</div>
+        <div class="holePar">Par: ${
+          Model.holePar[Model.activeHole] != null
+            ? Model.holePar[Model.activeHole]
+            : ""
+        }</div>
         <button class="buttons nextHole">Neste Hull</button>
     </div>
 
@@ -33,6 +38,7 @@ export function showView() {
   Event.OnClickSetActivePlayer();
   Event.OnClickKeyBoard();
   Event.OnChangePlayerScore();
+  Event.OnClickHolePar();
 }
 
 // HUSK Å BYGG FUNKSJONALITET OG VIEW TING FOR "hull Par"

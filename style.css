@@ -59,6 +59,15 @@ input[class^="PlayerInput"] {
 	width: 20px;
 	height: 15px;
 }
+.holeParInput{
+	width: 20px;
+	height: 15px;
+}
+.PScore{
+	display: flex;
+	flex-flow: wrap row;
+	justify-content: space-around; /* se på detta, å fix på ett eller annet vis. */
+}
 
 .keyboard-container{
 	margin-top: 15px;

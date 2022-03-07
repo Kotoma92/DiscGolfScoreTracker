@@ -3,6 +3,7 @@ const NewPlayer = (name) => {
   return {
     name,
     holeScore: [],
+    holeparscore: [],
     outOfBounds: [],
     totalScore: 0,
   };
@@ -37,6 +38,13 @@ export const CreatePlayer = (name) => {
       });
       player.totalScore = result;
       return player.totalScore;
+    },
+
+    GetParScore(hole, holePar) {
+      const playerScore = player.holeScore[hole];
+      if (typeof holePar === "undefined") return 0;
+      player.holeparscore[hole] = playerScore + holePar;
+      return player.holeparscore[hole];
     },
 
     AddScore(value) {
