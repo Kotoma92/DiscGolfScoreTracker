@@ -95,7 +95,7 @@ export const Eventhandlers = {
       divHolePar.innerHTML =
         "Par: <input type='number' autofocus class='holeParInput'>";
       let InputHolePar = document.querySelector(".holeParInput");
-      InputHolePar.addEventListener("input", (e) => {
+      InputHolePar.addEventListener("change", (e) => {
         Model.holePar[Model.activeHole] = e.target.value;
         showView();
       });

@@ -23,7 +23,7 @@ export function showView() {
           Model.holePar[Model.activeHole] != null
             ? Model.holePar[Model.activeHole]
             : ""
-        }</div>
+        } </div>
         <button class="buttons nextHole">Neste Hull</button>
     </div>
 

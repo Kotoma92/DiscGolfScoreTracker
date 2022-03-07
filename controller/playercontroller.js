@@ -42,8 +42,18 @@ export const CreatePlayer = (name) => {
 
     GetParScore(hole, holePar) {
       const playerScore = player.holeScore[hole];
-      if (typeof holePar === "undefined") return 0;
-      player.holeparscore[hole] = playerScore + holePar;
+
+      if (playerScore == null) {
+        return (player.holeparscore[hole] = 0);
+      } else if (holePar == null) {
+        player.holeparscore[hole] = playerScore;
+      } else {
+        if (holePar > playerScore) {
+          player.holeparscore[hole] = Math.abs(holePar - playerScore) * -1;
+        } else {
+          player.holeparscore[hole] = Math.abs(holePar - playerScore);
+        }
+      }
       return player.holeparscore[hole];
     },
 
