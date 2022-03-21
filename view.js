@@ -12,7 +12,7 @@ export function showView() {
   app.innerHTML = /*HTML*/ `
     <div class="wrap">
         <div class="center">${Model.mainTitle}</div><br>
-        <input class="input addPlayerInput" value=""></input>
+        <input class="input addPlayerInput" value="" placeholder="Player Name"></input>
         <button class="buttons addPlayerButton">Add Player</button>
     </div>
 

@@ -51,7 +51,12 @@ export const Eventhandlers = {
       if (document.querySelector('[id="activePlayer"]') != null) {
         document.querySelector('[id="activePlayer"]').removeAttribute("id");
       }
-      divHolePar.innerHTML = "Par: <input type='number' class='holeParInput'>";
+      divHolePar.innerHTML = `
+      Par: <input 
+              type='number'
+              class='holeParInput'
+              placeholder='${Model.holePar[Model.activeHole]}'
+            >`;
       let InputHolePar = document.querySelector(".holeParInput");
       InputHolePar.focus();
       InputHolePar.addEventListener("change", (e) => {
