@@ -36,7 +36,7 @@ export function showView() {
   Event.OnClickNextHole();
   Event.OnClickLastHole();
   Event.OnClickSetActivePlayer();
-  Event.OnClickKeyBoard();
+  Event.OnClickNumPad();
   Event.OnChangePlayerScore();
   Event.OnClickHolePar();
 }

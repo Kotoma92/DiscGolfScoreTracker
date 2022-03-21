@@ -45,25 +45,44 @@ export const Eventhandlers = {
       });
     }
   },
+  OnClickHolePar() {
+    let divHolePar = document.querySelector(".holePar");
+    divHolePar.addEventListener("click", () => {
+      if (document.querySelector('[id="activePlayer"]') != null) {
+        document.querySelector('[id="activePlayer"]').removeAttribute("id");
+      }
+      divHolePar.innerHTML = "Par: <input type='number' class='holeParInput'>";
+      let InputHolePar = document.querySelector(".holeParInput");
+      InputHolePar.focus();
+      InputHolePar.addEventListener("change", (e) => {
+        Model.holePar[Model.activeHole] = e.target.value;
+        showView();
+      });
+    });
+  },
 
-  OnClickKeyBoard() {
+  OnClickNumPad() {
     let keys = document.querySelectorAll('[id^="key"]');
     for (let i = 0; i < keys.length; i++) {
       const Element = keys[i];
       Element.addEventListener("click", (e) => {
-        const ConcatParseNum = Number(
-          Model.player[Model.activePlayer].GetHoleScore(Model.activeHole) +
-            e.target.value
-        );
-        if (ConcatParseNum !== NaN) {
-          if (ConcatParseNum < 20) {
-            Model.player[Model.activePlayer].ChangeScore(
-              Model.activeHole,
-              ConcatParseNum
-            );
-          } else {
-            Model.player[Model.activePlayer].ChangeScore(Model.activeHole, 0);
+        if (document.querySelector(".holeParInput") == null) {
+          const ConcatParseNum = Number(
+            Model.player[Model.activePlayer].GetHoleScore(Model.activeHole) +
+              e.target.value
+          );
+          if (ConcatParseNum !== NaN) {
+            if (ConcatParseNum < 20) {
+              Model.player[Model.activePlayer].ChangeScore(
+                Model.activeHole,
+                ConcatParseNum
+              );
+            } else {
+              Model.player[Model.activePlayer].ChangeScore(Model.activeHole, 0);
+            }
           }
+        } else {
+          Model.holePar[Model.activeHole] = e.target.value;
         }
         showView();
       });
@@ -88,19 +107,6 @@ export const Eventhandlers = {
         [id$='someId'] will match all ids ending with someId.
         [id*='someId'] will match all ids containing someId.
   */
-
-  OnClickHolePar() {
-    let divHolePar = document.querySelector(".holePar");
-    divHolePar.addEventListener("click", () => {
-      divHolePar.innerHTML = "Par: <input type='number' class='holeParInput'>";
-      let InputHolePar = document.querySelector(".holeParInput");
-      InputHolePar.focus();
-      InputHolePar.addEventListener("change", (e) => {
-        Model.holePar[Model.activeHole] = e.target.value;
-        showView();
-      });
-    });
-  },
 
   OnClickConsoleLogButton() {
     let clogButton = document.querySelector(".cLog");
